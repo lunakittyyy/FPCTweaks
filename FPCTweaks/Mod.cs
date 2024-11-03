@@ -1,13 +1,17 @@
-﻿using GDWeave;
+﻿using FPCTweaks.Patches;
+using GDWeave;
 
-namespace GDWeave.Sample;
+namespace FPCTweaks;
 
 public class Mod : IMod {
     public Config Config;
+    public static Mod? Instance;
 
     public Mod(IModInterface modInterface) {
         this.Config = modInterface.ReadConfig<Config>();
-        modInterface.Logger.Information("Hello, world!");
+        Instance = this;
+        modInterface.RegisterScriptMod(new AutoLook());
+        modInterface.RegisterScriptMod(new SoftLockPatch());
     }
 
     public void Dispose() {

@@ -1,0 +1,10 @@
+{
+  "Id": "FPCTweaks",
+  "AssemblyPath": "FPCTweaks.dll",
+  "Metadata": {
+    "Name": "FPCTweaks",
+    "Author": "lunakittyyy",
+    "Version": "1.0.0",
+    "Description": "Fixes and enhancements for first-person camera in WEBFISHING"
+  }
+}
