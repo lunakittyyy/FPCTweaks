@@ -10,7 +10,7 @@ public class Mod : IMod {
     public Mod(IModInterface modInterface) {
         this.Config = modInterface.ReadConfig<Config>();
         Instance = this;
-        modInterface.RegisterScriptMod(new AutoLook());
+        if (Config.AutoLook) modInterface.RegisterScriptMod(new AutoLook());
         modInterface.RegisterScriptMod(new SoftLockPatch());
     }
 

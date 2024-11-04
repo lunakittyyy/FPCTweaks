@@ -29,13 +29,11 @@ public class AutoLook : IScriptMod
                 yield return token;
                 yield return new Token(TokenType.Newline, 1);
                 
-                // if camera_zoom <= 0.0 and AutoLook:
+                // if camera_zoom <= 0.0:
                 yield return new Token(TokenType.CfIf);
                 yield return new IdentifierToken("camera_zoom");
                 yield return new Token(TokenType.OpLessEqual);
                 yield return new ConstantToken(new RealVariant(0.0));
-                yield return new Token(TokenType.OpAnd);
-                yield return new ConstantToken(new BoolVariant(Mod.Instance.Config.AutoLook));
                 yield return new Token(TokenType.Colon);
                 yield return new Token(TokenType.Newline, 2);
                 // mouse_look = true
